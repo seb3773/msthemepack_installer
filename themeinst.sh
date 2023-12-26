@@ -33,6 +33,7 @@ tdesudo -i preferences-desktop-wallpaper -d -c ls --comment "ms themepack instal
 sudo mkdir -p "$wallpapers_dir"
 sudo 7z x "$1" -o"$wallpapers_dir" -y > /dev/null 2>&1
 sudo chmod -R 755 "/opt/trinity/share/wallpapers/$filename"
+sudo rm -f "/opt/trinity/share/wallpapers/$filename/"*.theme
 sudo kwriteconfig --file $USER_HOME/.trinity/share/config/kdesktoprc --group Desktop0 --key WallpaperList "/opt/trinity/share/wallpapers/$filename/DesktopBackground/"
 sudo kwriteconfig --file $USER_HOME/.trinity/share/config/kdesktoprc --group Desktop0 --key MultiWallpaperMode Random
 sudo kwriteconfig --file $USER_HOME/.trinity/share/config/kdesktoprc --group Desktop0 --key CrossFadeBg true
