@@ -11,6 +11,8 @@ and use it from command line or install it with ' ./themeinst.sh install'
   
 You can download lots of .themepack here for example: https://support.microsoft.com/fr-fr/windows/th%C3%A8mes-du-bureau-94880287-6046-1d35-6d2f-35dee759701e#WindowsVersion=Windows_10
 
+This script was created to be a part of Q4OStools scripts, but can be used independently of it. Just be sure you have 7z installed.
 
+  
 
 
