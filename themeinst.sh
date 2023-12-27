@@ -15,6 +15,7 @@ Terminal=false
 Type=Application
 X-TDE-InitialPreference=2
 ";desktopfilepath="$HOME/.trinity/share/applnk/.hidden/themeinst.sh.desktop"
+sudo mkdir -p "$HOME/.trinity/share/applnk/.hidden"
 echo "$desktopfilecontent" | sudo tee "$desktopfilepath" > /dev/null 2>&1
 mdesktopfilecontent="[Desktop Entry]
 Comment=Microsoft themepack
