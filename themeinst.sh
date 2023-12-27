@@ -15,7 +15,7 @@ Terminal=false
 Type=Application
 X-TDE-InitialPreference=2
 ";desktopfilepath="$HOME/.trinity/share/applnk/.hidden/themeinst.sh.desktop"
-sudo echo "$desktopfilecontent" > "$desktopfilepath"
+echo "$desktopfilecontent" | sudo tee "$desktopfilepath" > /dev/null 2>&1
 mdesktopfilecontent="[Desktop Entry]
 Comment=Microsoft themepack
 Hidden=false
@@ -24,7 +24,7 @@ MimeType=application/ms_themepack
 Patterns=*.themepack
 Type=MimeType
 ";mdesktopfilepath="$HOME/.trinity/share/mimelnk/application/ms_themepack.desktop"
-sudo echo "$mdesktopfilecontent" > "$mdesktopfilepath"
+echo "$mdesktopfilecontent" | sudo tee "$mdesktopfilepath" > /dev/null 2>&1
 echo "Done."; exit; fi
 filename=$(basename "$1" .themepack)
 wallpapers_dir="/opt/trinity/share/wallpapers/$filename"
