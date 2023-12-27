@@ -17,6 +17,16 @@ X-TDE-InitialPreference=2
 ";desktopfilepath="$HOME/.trinity/share/applnk/.hidden/themeinst.sh.desktop"
 sudo mkdir -p "$HOME/.trinity/share/applnk/.hidden"
 echo "$desktopfilecontent" | sudo tee "$desktopfilepath" > /dev/null 2>&1
+desktopfilecontent="[Desktop Entry]
+Exec[\$e]=$scriptfolder/themeinst.sh
+MimeType=application/ms_deskthemepack
+Name=ms themepack installer
+Terminal=false
+Type=Application
+X-TDE-InitialPreference=2
+";desktopfilepath="$HOME/.trinity/share/applnk/.hidden/themeinst.sh-2.desktop"
+sudo mkdir -p "$HOME/.trinity/share/applnk/.hidden"
+echo "$desktopfilecontent" | sudo tee "$desktopfilepath" > /dev/null 2>&1
 mdesktopfilecontent="[Desktop Entry]
 Comment=Microsoft themepack
 Hidden=false
@@ -26,8 +36,21 @@ Patterns=*.themepack
 Type=MimeType
 ";mdesktopfilepath="$HOME/.trinity/share/mimelnk/application/ms_themepack.desktop"
 echo "$mdesktopfilecontent" | sudo tee "$mdesktopfilepath" > /dev/null 2>&1
+mdesktopfilecontent="[Desktop Entry]
+Comment=Microsoft deskthemepack
+Hidden=false
+Icon=preferences-desktop-wallpaper
+MimeType=application/ms_deskthemepack
+Patterns=*.deskthemepack
+Type=MimeType
+";mdesktopfilepath="$HOME/.trinity/share/mimelnk/application/ms_deskthemepack.desktop"
+echo "$mdesktopfilecontent" | sudo tee "$mdesktopfilepath" > /dev/null 2>&1
 echo "Done."; exit; fi
-filename=$(basename "$1" .themepack)
+filename=$(basename "$1")
+if [[ $filename == *.themepack ]]; then filename_no_extension="${filename%.themepack}"
+elif [[ $filename == *.deskthemepack ]]; then filename_no_extension="${filename%.deskthemepack}"
+else echo "Extension must be .themepack or .deskthemepack"; exit; fi
+filename=$filename_no_extension
 wallpapers_dir="/opt/trinity/share/wallpapers/$filename"
 if  [ $interm -eq 0 ]; then
 tdesudo -i preferences-desktop-wallpaper -d -c ls --comment "ms themepack installer needs administrators rights. Please enter your password:"; fi
