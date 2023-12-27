@@ -29,7 +29,7 @@ echo "Done."; exit; fi
 filename=$(basename "$1" .themepack)
 wallpapers_dir="/opt/trinity/share/wallpapers/$filename"
 if  [ $interm -eq 0 ]; then
-tdesudo -i preferences-desktop-wallpaper -d -c ls --comment "ms themepack installer need administrators rights. Please enter your password:"; fi
+tdesudo -i preferences-desktop-wallpaper -d -c ls --comment "ms themepack installer needs administrators rights. Please enter your password:"; fi
 sudo mkdir -p "$wallpapers_dir"
 sudo 7z x "$1" -o"$wallpapers_dir" -y > /dev/null 2>&1
 sudo chmod -R 755 "/opt/trinity/share/wallpapers/$filename"
