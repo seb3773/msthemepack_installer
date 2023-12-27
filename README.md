@@ -1,7 +1,7 @@
-Microsoft .themepack wallpapers package installer for Q4OS with Trinity DE.  
+Microsoft .themepack / .deskthemepack wallpapers package installer for Q4OS with Trinity DE.  
 ---------------------------------------------------------------------------
   
-It can be used in terminal with a full path themepack namefile in argument, or it can be associated to the .themepack extension with the argument "install"  
+It can be used in terminal with a full path themepack namefile in argument, or it can be associated to the .themepack/.deskthemepack extensions with the argument "install"  
   
 Once invoked with a themepack file from the terminal or launched by left clicking on a themepack if association is installed, it will decompress the themepack, and configure kdesktop to do a diaporama with the themepack images, just like the behavior you have with these files on windows 10/11.
 
