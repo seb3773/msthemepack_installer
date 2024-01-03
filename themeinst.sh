@@ -61,7 +61,7 @@ sudo rm -f "/opt/trinity/share/wallpapers/$filename/"*.theme
 sudo kwriteconfig --file $USER_HOME/.trinity/share/config/kdesktoprc --group Desktop0 --key WallpaperList "/opt/trinity/share/wallpapers/$filename/DesktopBackground/"
 sudo kwriteconfig --file $USER_HOME/.trinity/share/config/kdesktoprc --group Desktop0 --key MultiWallpaperMode Random
 sudo kwriteconfig --file $USER_HOME/.trinity/share/config/kdesktoprc --group Desktop0 --key CrossFadeBg true
-sudo kwriteconfig --file $USER_HOME/.trinity/share/config/kdesktoprc --group Desktop0 --key ChangeInterval 15
+sudo kwriteconfig --file $USER_HOME/.trinity/share/config/kdesktoprc --group Desktop0 --key ChangeInterval 10
 if  [ $interm -eq 1 ]; then echo "MS Themepack $filename installed.";echo "Restarting kdesktop..."
 fi
 #refresh desktop - dirty kill... maybe there's another solution to force kdesktop to re-read config ?
