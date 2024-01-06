@@ -63,9 +63,10 @@ sudo kwriteconfig --file $USER_HOME/.trinity/share/config/kdesktoprc --group Des
 sudo kwriteconfig --file $USER_HOME/.trinity/share/config/kdesktoprc --group Desktop0 --key CrossFadeBg true
 sudo kwriteconfig --file $USER_HOME/.trinity/share/config/kdesktoprc --group Desktop0 --key ChangeInterval 10
 if  [ $interm -eq 1 ]; then echo "MS Themepack $filename installed.";echo "Restarting kdesktop..."
+else dcop knotify Notify notify "Themepack installation" "knotify" "Restarting kdesktop..." "" "" 16 0
 fi
 #refresh desktop - dirty kill... maybe there's another solution to force kdesktop to re-read config ?
 killall -w -q kdesktop > /dev/null 2>&1 && kdesktop &> /dev/null 2>&1
 if  [ $interm -eq 1 ]; then echo "Done."; else
-kdialog --title "Themepack installation" --passivepopup "Themepack $filename Applied." 3
+dcop knotify Notify notify "Themepack installation" "knotify" "Themepack $filename Applied." "" "" 16 2
 fi
